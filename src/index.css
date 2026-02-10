@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import 'tailwindcss';
+:root[data-theme="light"] {
+  --text-50: #f1f2f3;
+  --text-100: #e4e6e7;
+  --text-200: #c9cccf;
+  --text-300: #aeb3b7;
+  --text-400: #93999f;
+  --text-500: #788087;
+  --text-600: #60666c;
+  --text-700: #484d51;
+  --text-800: #303336;
+  --text-900: #181a1b;
+  --text-950: #0c0d0e;
+
+  --background-50: #f0f2f5;
+  --background-100: #e0e6eb;
+  --background-200: #c2ccd6;
+  --background-300: #a3b3c2;
+  --background-400: #8599ad;
+  --background-500: #667f99;
+  --background-600: #52667a;
+  --background-700: #3d4c5c;
+  --background-800: #29333d;
+  --background-900: #14191f;
+  --background-950: #0a0d0f;
+
+  --primary-50: #ecf2f8;
+  --primary-100: #dae5f1;
+  --primary-200: #b5cbe3;
+  --primary-300: #8fb1d6;
+  --primary-400: #6a97c8;
+  --primary-500: #457eba;
+  --primary-600: #376495;
+  --primary-700: #294b70;
+  --primary-800: #1c324a;
+  --primary-900: #0e1925;
+  --primary-950: #070d13;
+
+  --secondary-50: #e8f2fd;
+  --secondary-100: #d1e4fa;
+  --secondary-200: #a2c9f6;
+  --secondary-300: #74aef1;
+  --secondary-400: #4593ed;
+  --secondary-500: #1779e8;
+  --secondary-600: #1260ba;
+  --secondary-700: #0e488b;
+  --secondary-800: #09305d;
+  --secondary-900: #05182e;
+  --secondary-950: #020c17;
+
+  --accent-50: #e8f2fc;
+  --accent-100: #d2e4f9;
+  --accent-200: #a5c9f3;
+  --accent-300: #78afed;
+  --accent-400: #4a94e8;
+  --accent-500: #1d79e2;
+  --accent-600: #1761b5;
+  --accent-700: #124987;
+  --accent-800: #0c305a;
+  --accent-900: #06182d;
+  --accent-950: #030c17;
+
+}
+:root[data-theme="dark"] {
+  --text-50: #0c0d0e;
+  --text-100: #181a1b;
+  --text-200: #303336;
+  --text-300: #484d51;
+  --text-400: #60666c;
+  --text-500: #788087;
+  --text-600: #93999f;
+  --text-700: #aeb3b7;
+  --text-800: #c9cccf;
+  --text-900: #e4e6e7;
+  --text-950: #f1f2f3;
+
+  --background-50: #0b0d0f;
+  --background-100: #15191e;
+  --background-200: #2a333c;
+  --background-300: #3f4c5a;
+  --background-400: #556677;
+  --background-500: #6a7f95;
+  --background-600: #8899aa;
+  --background-700: #a5b3c0;
+  --background-800: #c3ccd5;
+  --background-900: #e1e6ea;
+  --background-950: #f0f2f4;
+
+  --primary-50: #070d13;
+  --primary-100: #0e1925;
+  --primary-200: #1c324a;
+  --primary-300: #294b70;
+  --primary-400: #376495;
+  --primary-500: #457eba;
+  --primary-600: #6a97c8;
+  --primary-700: #8fb1d6;
+  --primary-800: #b5cbe3;
+  --primary-900: #dae5f1;
+  --primary-950: #ecf2f8;
+
+  --secondary-50: #020c17;
+  --secondary-100: #05182e;
+  --secondary-200: #09305d;
+  --secondary-300: #0e488b;
+  --secondary-400: #1260ba;
+  --secondary-500: #1779e8;
+  --secondary-600: #4593ed;
+  --secondary-700: #74aef1;
+  --secondary-800: #a2c9f6;
+  --secondary-900: #d1e4fa;
+  --secondary-950: #e8f2fd;
+
+  --accent-50: #030c17;
+  --accent-100: #06182d;
+  --accent-200: #0c305a;
+  --accent-300: #124987;
+  --accent-400: #1761b5;
+  --accent-500: #1d79e2;
+  --accent-600: #4a94e8;
+  --accent-700: #78afed;
+  --accent-800: #a5c9f3;
+  --accent-900: #d2e4f9;
+  --accent-950: #e8f2fc;
+
+}
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.font-geist {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: 'Geist', sans-serif;
+  background: var(--background-100);
+  color: var(--text-800);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  min-width: 400px;
+  background: var(--background-50);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-900);
+}
+
+/* Form */
+.form {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+input[type='text'] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--background-300);
+  border-radius: 6px;
+  transition: 0.2s ease;
+  width: 100%;
+}
+
+input[type='text']:focus {
+  border-color: var(--primary-500);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(69, 126, 186, 0.25);
+}
+
+button {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  background-color: var(--primary-500);
+  color: var(--text-50);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* User Card */
+.user-card {
+  background-color: var(--background-50);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border: 2px solid var(--background-100);
+}
+
+.user-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--text-900);
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: var(--text-600);
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary-800);
+  color: var(--text-50);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-btn:hover {
+  background-color: var(--primary-700);
+}
+
+/* Recent Searches */
+.recent-searches {
+  margin-top: 2rem;
+  background-color: var(--background-50);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.recent-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-700);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.recent-searches ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-searches li {
+  margin-bottom: 0.75rem;
+}
+
+.recent-searches button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background-color: var(--background-100);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-900);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.recent-searches button:hover {
+  background-color: var(--background-200);
+}
+
+.user-icon {
+  color: var(--text-600);
+  font-size: 1rem;
+}
+
+/* Suggestions Dropdown */
+.dropdown-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.suggestions {
+  position: absolute;
+  width: 100%;
+  max-height: 220px;
+  margin-top: 0.25rem;
+  background: var(--background-50);
+  border: 1px solid var(--background-300);
+  border-radius: 8px;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 0;
+  list-style: none;
+}
+
+.suggestions li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 0.95rem;
+  color: var(--text-800);
+}
+
+.suggestions li:hover {
+  background-color: var(--background-100);
+}
+
+.avatar-xs {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+/* Follow Button */
+.follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #ffffff;
+  background-color: #22c55e;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.follow-btn.following {
+  background-color: #ef4444; /* 🔥 RED for following (unfollow state) */
+}
+
+.follow-btn:hover {
+  opacity: 0.9;
+}
+
+.follow-btn.following:hover {
+  background-color: #dc2626; /* Darker red on hover */
+}
+
+.follow-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.follow-icon {
+  font-size: 1.2rem;
+}
