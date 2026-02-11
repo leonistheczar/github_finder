@@ -1,11 +1,26 @@
 import SearchForm from "./components/SearchForm";
+import ProfileData from "./components/ProfileData"; 
+import api from "./api/api";
+import type { responseType } from "./types";
+import { useState } from "react";
+export const getUser = async (user: string): Promise<responseType> => {
+  try {
+      const { data } = await api.get(`/users/${user}`);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+};
 const App = () => {
+  const [user,setUser] = useState<string>("");
   return ( 
-    <section className="w-full max-w-7xl mx-auto">
-      <div className="container p-4">
-        <h1><span className="italic text-(--accent-600) font-semibold">Search</span>, <span className="italic text-(--accent-800) font-semibold">Explore</span>, <span className="italic text-(--accent-800) font-semibold">Discover</span> GitHub Profiles</h1>
-        <SearchForm />
+    <section className="w-full max-w-7xl mx-auto flex flex-col gap-6">
+      <div id="search" className="container p-4">
+        <h1><span className="italic text-(--accent-600) font-semibold">Search</span>, <span className="italic text-(--accent-600) font-semibold">Explore</span>, <span className="italic text-(--accent-600) font-semibold">Discover</span> GitHub Profiles</h1>
+        <SearchForm onSearch={setUser} />
       </div>
+      <ProfileData user={user}/>
     </section>
    );
 } 

@@ -187,7 +187,12 @@ input[type='text']:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(69, 126, 186, 0.25);
 }
-
+/* For auto-suggestion choose */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--background-50) inset;
+  -webkit-text-fill-color: var(--text-800);
+  transition: background-color 5000s ease-in-out 0s;
+}
 button {
   padding: 0.75rem 1.2rem;
   font-size: 1rem;
