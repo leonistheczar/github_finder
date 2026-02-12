@@ -24,7 +24,7 @@ export const getUserRepos = async (user: string): Promise<ReposResponseType[]> =
 const App = () => {
   const [user,setUser] = useState<string>("");
   return ( 
-    <section className="w-full max-w-7xl mx-auto flex flex-col gap-6">
+    <section className="w-full max-w-7xl mx-auto flex flex-col items-center gap-6">
       <div id="search" className="container p-4">
         <h1><span className="italic text-(--accent-600) font-semibold">Search</span>, <span className="italic text-(--accent-600) font-semibold">Explore</span>, <span className="italic text-(--accent-600) font-semibold">Discover</span> GitHub Profiles</h1>
         <SearchForm onSearch={setUser} />

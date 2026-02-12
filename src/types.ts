@@ -13,9 +13,13 @@ export type ResponseType = {
     followers: number,
     following: number,
     hireable?: boolean,
-    email?: string | null
+    email?: string | null,
+    company: string,
+    blog: string,
+    created_at: string
 }
 export type ReposResponseType = {
+    id: string,
     name: string
     full_name: string
     private: boolean
@@ -36,5 +40,7 @@ export type ReposResponseType = {
       name: string
       spdx_id: string
     } | null
-    default_branch: string
-  }[];  
+    default_branch: string,
+    stargazers_count: number,
+    forks_count: string | number,
+  };  
