@@ -1,4 +1,4 @@
-export type responseType = {
+export type ResponseType = {
     login: string,
     id: number,
     avatar_url: string,
@@ -15,3 +15,26 @@ export type responseType = {
     hireable?: boolean,
     email?: string | null
 }
+export type ReposResponseType = {
+    name: string
+    full_name: string
+    private: boolean
+    owner: {
+      login: string
+      html_url: string
+      type: string
+      site_admin: boolean
+    }
+    html_url: string
+    description: string | null
+    created_at: string
+    pushed_at: string
+    git_url: string
+    language: string | null
+    license: {
+      key: string
+      name: string
+      spdx_id: string
+    } | null
+    default_branch: string
+  }[];  

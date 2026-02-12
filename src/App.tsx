@@ -1,17 +1,26 @@
 import SearchForm from "./components/SearchForm";
 import ProfileData from "./components/ProfileData"; 
 import api from "./api/api";
-import type { responseType } from "./types";
+import type { ResponseType, ReposResponseType  } from "./types";
 import { useState } from "react";
-export const getUser = async (user: string): Promise<responseType> => {
+export const getUser = async (user: string): Promise<ResponseType> => {
   try {
       const { data } = await api.get(`/users/${user}`);
-      return data;
+      return data
     } catch (error) {
       console.error(error);
       throw error;
     }
 };
+export const getUserRepos = async (user: string): Promise<ReposResponseType[]> => {
+  try {
+    const { data } = await api.get(`/users/${user}/repos`);
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(`Failed to fetch ${user} repositories`);
+  }
+}
 const App = () => {
   const [user,setUser] = useState<string>("");
   return ( 
