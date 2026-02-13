@@ -39,7 +39,7 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/leonistheczar/github-finder.git
+git clone https://github.com/leonistheczar/github_finder.git
 cd github-finder
 ```
 
@@ -88,7 +88,7 @@ npm run build
 yarn build
 ```
 
-The optimized production build will be in the `dist` folder.
+The optimized production build will be in the `build` folder.
 
 ## Project Structure
 
@@ -98,9 +98,6 @@ github-finder/
 ├── src/
 │   ├── api/           # API service layer
 │   ├── components/    # Reusable UI components
-│   ├── hooks/         # Custom React hooks
-│   ├── pages/         # Page components
-│   ├── utils/         # Helper functions
 │   ├── App.jsx        # Main application component
 │   └── main.jsx       # Application entry point
 ├── .env               # Environment variables (not committed)
@@ -172,7 +169,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Email - [ali.at.grind@gmail.com](mailto:ali.at.grind@gmail.com)
 
-Project Link: [https://github.com/leonistheczar/github-finder](https://github.com/leonistheczar/github-finder)
+Project Link: [https://github.com/leonistheczar/github_finder](https://github.com/leonistheczar/github_finder)
 
 ---
 
